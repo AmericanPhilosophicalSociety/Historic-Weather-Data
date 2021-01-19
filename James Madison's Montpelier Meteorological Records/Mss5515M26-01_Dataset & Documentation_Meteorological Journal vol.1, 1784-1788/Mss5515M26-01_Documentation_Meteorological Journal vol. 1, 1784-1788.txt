@@ -51,7 +51,7 @@ Digital surrogate location: https://diglib.amphilsoc.org/islandora/object/text:2
 
 
 Data description:
-This dataset contains the information from volume 2 (1784- 1788) and is fully interoperable with Mss5515M26-01 (1784-1788). The manuscript entries were originally transcribed into database/tabular form by Dr. Daniel Druckenbrod. His organization scheme and annotations remain in the columns 'Druckenbrod Sort ID' and 'Druckenbrod Notes'. With the permission of Dr. Druckenbrod, these datasets were reviewed, edited, and restructured when necessary to ensure interoperability with similar datasets being created at UVA from Thomas Jefferson's weather records. Specific alterations are noted in the "Normalization and Data Standards" section of this documentation. These changes as well as other notes from the process at APS are found in each dataset's 'APS Notes' column.
+This dataset contains the information from volume 2 (1789- 1793) and is fully interoperable with Mss5515M26-01 (1784-1788). The manuscript entries were originally transcribed into database/tabular form by Dr. Daniel Druckenbrod. His organization scheme and annotations remain in the columns 'Druckenbrod Sort ID' and 'Druckenbrod Notes'. With the permission of Dr. Druckenbrod, these datasets were reviewed, edited, and restructured when necessary to ensure interoperability with similar datasets being created at UVA from Thomas Jefferson's weather records. Specific alterations are noted in the "Normalization and Data Standards" section of this documentation. These changes as well as other notes from the process at APS are found in each dataset's 'APS Notes' column.
 
 Each row has been assigned a numerical ID ('Sort ID') to allow sorting while preserving the data's context.
 
