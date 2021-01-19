@@ -1,7 +1,8 @@
-# Historic-Weather-Data
+# Historic Weather Data
+# James Madison's Montpelier Meteorological Records
 
 ## What is this data?
-Meteorological observations were recorded at James Madison's Virginia plantation, Montpelier, from 1784 to 1793. These volumes show daily weather and notes of plant sowing, harvesting, bird migration, and other seasonal phenomena.
+Meteorological observations were recorded at James Madison's Virginia plantation, Montpelier, from 1784 to 1793. These volumes show daily weather and notes of plant sowing, harvesting, bird migration, and other seasonal phenomena. The original volumes (Mss.551.5.M26) from which these spreadsheets were made are in the collections of the American Philosophical Society and can be viewed in the <a href="https://diglib.amphilsoc.org/islandora/compound/meteorological-journal-volumes-1-2-1784-1793#page/1/mode/1up">APS Digital Library</a>.
 
 ## Who created this data?
 Daniel Druckenbrod, PhD
