@@ -1,0 +1,519 @@
+{ 
+	"$schema": "https://specs.frictionlessdata.io/schemas/table-schema.json",
+  	"title": "Table Schema: Mss5515M26_01 & Mss5515M26_02",
+  	"description": "This schema describes the structure of the datasets Mss5515M26_01 & Mss5515M26_02",
+  	"type": "object",
+  	"properties": {
+		"fields": {
+			"type": "array",
+			"minItems": 1,
+		 	"items": {
+		 		"title": "table Schema Field",
+		 		"type": "object",
+		 		"properties":  { 
+			 		"name": "sort_id", 
+			 		"title": "Sort ID",
+			 		"description": "A numerical ID to allow sorting of rows while preserving the data's context and original order.",
+			 		"type": "integer", 
+			 		"constraints": { 
+			 			"required": true }
+		 	 		},
+		 
+		 		{ 
+			 		"name": "druckenbrod_sort_id", 
+			 		"title": "Druckenbrod Sort ID",
+			 		"description": "The numerical ID produced by Daniel Druckenbrod, et al. in their dataset to allow sorting while preserving the data’s context.",
+			 		"context": "Where absent, previously subsumed temperature comments were reformatted into individual rows.",
+			 		"type": "integer", 
+			 		"constraints": { 
+			 			"required": true } 	
+			 		},
+
+		 		{ 
+			 		"name": "key", 
+			 		"title": "Key",
+			 		"description": "Primary key assigned at APS to each row as a unique identifier, comprising file name and transaction number.",
+			 		"type": "string",
+			 		"constraints": { 
+			 			"required": true } 
+		 			},
+
+		 		{ 
+			 		"name": "aps_call_number", 
+			 		"title": "APS call number",
+			 		"type": "string",
+			 		"description": "The APS call number of the physical manuscript object from which this data is derived.",		 	
+					"constraints": { 
+			 			"required": true } 
+		 			},
+
+		 		{ 
+			 		"name": "file_name", 
+			 		"title": "File name",
+			 		"description": "The local APS file name of the imaged representative manuscript page from which this data is derived.",
+			 		"type": "string",
+			 		"constraints": { 
+			 			"required": true } 
+		 			},
+
+		 		{ 
+			 		"name": "transaction_number_on_this_page", 
+			 		"title": "Transaction number on this page",
+			 		"description": "The ordinal position of the entry row within a page (beginning at 1) from which this data is derived.",
+			 		"type": "integer", 
+			 		"constraints": { 
+			 			"required": true } 
+		 			},
+
+		 		{ 
+			 		"name": "aps_digital_library_page_image_url", 
+			 		"title": "APS Digital Library page image URL",
+			 		"description": "The URL where the representative image of the manuscript page, from which this data is derived, may be found in the APS Digital Library.",
+			 		"type": "string",
+			 		"rdfType": "https://schema.org/isBasedOn",
+			 		"constraints": { 
+			 			"required": true } 
+		 			},
+
+			 	{ 
+			 		"name": "aps_notes", 
+			 		"title": "APS notes",
+			 		"description": "Contextual notes made at APS during the data cleaning process to document data choices and interpretive discoveries.",
+			 		"context": "This column primarily indicates data choices regarding missing, null, reformatted, edited, or added data points.",
+			 		"type": "string",
+			 		"constraints": { 
+			 			"required": true } 
+			 		}, 
+			 	{ 
+			 		"name": "druckenbrod_notes", 
+			 		"title": "Druckenbrod notes",
+			 		"type": "string",
+			 		"description": "Transcription notes added by Druckenbrod et al.",
+			 		"context": "This data was orignally contained under the column heading 'More info comment'.",
+					"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "date_of_entry", 
+			 		"title": "Date of entry",
+			 		"type": "date", 
+					"format": "date",
+					"description": "The date of the initial entry in the manuscript volume, formatted as YYYY-MM-DD.",
+					"rdfType": "https://schema.org/observationDate",
+					"constraints": { 
+			 			"required": true } 
+			 		}, 
+			 	{ 
+			 		"name": "time_of_entry_as_transcribed", 
+			 		"title": "Time of entry as transcribed",
+			 		"description": "The time of the entry recorded in the manuscript.",
+			 		"context": "While this is most often 'sunrise' or '4:00 PM', as these are the columns for which the Madisons recorded meteorological data throughout the manuscript, they also added '2:00 PM' starting in 1788-06-16. Furthermore, because the manuscript indicates that some entries were taken later or earlier than their column headings outline, those specifications have also been transcribed in this column.",
+			 		"type": "string",
+			 		"constraints": { 
+			 			"required": true } 
+			 		}, 
+			 	{ 
+			 		"name": "time_of_entry_standardized", 
+			 		"title": "Time of entry standardized",
+			 		"description": "The time of the data's entry, standardized to ISO 1861.",
+			 		"context": "Any instance of sunrise in Time Transcribed is assumed to correspond with sunrise time marked in Virginia almanacs. The St. George Tucker almanacs are referenced for the sunrise time data. The almanacs are part of the Tucker-Coleman Papers at the William and Mary Special Collections Research Center, and are accessed through their Digital Archive. The 1788 and 1789 almanacs are missing in the WMSPRC Digital Archive and those corresponding data points are left blank in Time Transcribed.",
+			 		"type": "date", 
+			 		"format": "time",
+			 		"constraints": { 
+			 			"required": true } 
+			 		}, 
+			 	{ 
+			 		"name": "wind_direction_as_transcribed", 
+			 		"title": "Wind direction as transcribed",
+			 		"description": "The wind direction as noted in the manuscript.",
+			 		"context": "Many later wind directions in the manuscript show several letters on different levels in the same box, which has been transcribed with a '/' mark (e.g., 'NE' on top of 'NW' has been transcribed as 'NE/NW').",
+			 		"type": "string",
+			 		"constraints": { 
+			 			"required": true } 
+			 		}, 
+			 	{ 
+			 		"name": "wind_direction_standardized", 
+			 		"title": "Wind direction standardized",
+			 		"description": "The wind direction as transcribed, converted into standardized three-letter compass notation for machine readability and interoperability.",
+			 		"context": "Where it can be reasonably assumed that the transcription refers to a recognized compass direction (e.g., 'SW veering to S' referring to SSW), the wind direction is formatted in that notation; for example, 'NE by N,' 'S.SW,' etc. and similar variations on compass directions. However, some noted wind directions (e.g., 'veering and unsettled') present no quantitative data on wind direction, and thus have been excluded from this column and noted as 'null data in wind direction' in the APS notes column. Additionally, partway through this volume, the Madisons abandoned most variations on compass directions in favor of noting two-to-four letters split into two levels within the manuscript (e.g., 'NE/NW,' 'S/SW'). Because these notations often indicate distinct directions as well as regular directions, I have counted them as null data for this column, and left blanks in this column where the transcription includes a '/'.",
+			 		"type": "string",
+			 		"constraints": { 
+			 			"required": true } 
+			 		}, 
+			 	{ 
+			 		"name": "temperature_fahrenheit_as_transcribed", 
+			 		"title": "Temperature (Fahrenheit) as transcribed",
+			 		"type": "string",
+			 		"description": "The F temperature in the manuscript as transcribed.",
+			 		"context": "Any temperature when it is not directly transcribed is recorded to the tenths place in Fahrenheit and any presence of '999' in the temperature data was replaced with a blank data point.",
+					"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "temperature_fahrenheit_standardized", 
+			 		"title": "Temperature (Fahrenheit) standardized",
+			 		"type": "number",
+			 		"description": "The F temperature in the manuscript as standardized into a decimal-number format.",
+					"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "daily_temp_high_fahrenheit_as_transcribed", 
+			 		"title": "Daily temp high (Fahrenheit) as transcribed",
+			 		"type": "string",
+			 		"description": "The F temperature originally recorded under the 'Greatest Heat' column in the manuscript.",
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "temp_high_entry_time_as_transcribed", 
+			 		"title": "Temp high entry time as transcribed",
+			 		"type": "string",
+			 		"description": "The local time at which the F temperature recorded under 'Greatest Heat' was noted in the manuscript.",
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "temp_high_entry_time_standardized", 
+			 		"title": "Temp high entry time standardized",
+			 		"type": "time",
+			 		"format": "any",
+			 		"description": "The time of the data's entry, standardized to ISO 1861.",
+					"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "precipitation_time", 
+			 		"title": "Precipitation time",
+			 		"type": "string",
+			 		"description": "The time of day of precipitation event as recorded by Daniel Druckenbrod, et al.",	
+					"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "precipitation_type", 
+			 		"title": "Precipitation type",
+			 		"type": "string",
+			 		"description": "The type of precipitation event as recorded by Daniel Druckenbrod, et al.",
+					"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "precipitation_measurement_inches", 
+			 		"title": "Precipitation measurement (inches)",
+			 		"description": "The amount, in inches, of precipitation as recorded by Daniel Druckenbrod, et al.",
+			 		"context": "Precipitation amount is recorded to tenth of an inch.",
+			 		"type": "string",
+			 		"constraints": { 
+			 			"required": true } 
+			 		}, 
+			 	{ 
+			 		"name": "observer", 
+			 		"title": "Observer",
+			 		"type": "string",
+			 		"description": "Data observer as recorded by Druckenbrod et al. Where Madison was not the presumed author, data point is blank.",
+			 		"context": "This column is included to represent the data recorded by Druckenbrod et al., and may not correspond to historical fact. We can assume that James Madison, Jr. (1751-1836) or James Madison, Sr. (1723-1801) recorded the vast majority of this data, but at the time of data cleaning, not enough information was available to discern between the records of individual entries.", 
+					"rdfType": "http://schema.org/agent",	
+					"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "meteorological_observations_as_transcribed", 
+			 		"title": "Meteorological observations as transcribed",
+			 		"description": "Meteorological observations as transcribed from the manuscript, generally consisting of comments written in the manuscript’s 'weather at sunrise' and 'weather at 4:00 PM' columns.",
+			 		"context": "Specific conditions noted in this column are indicated in the boolean columns that follow. Any additional temperature recordings in the Meteorological Transcriptions section (e.g.: 77 at 5 O’Clock) are moved to APS Notes. If the extra temperature comment is lengthy, it is moved to Other Observations and the change is noted in APS Notes. When a note on plant growth includes various dates (ie: April 10 planted peas 25 peas blossoming 29 first peas at the table [all written in for April 10]), the relevant information is redistributed to each date (e.g.: relevant note moved to April 10, 25, and 29). The division and originating date (e.g.: April 10) is recorded in APS Notes.",
+			 		"type": "string",
+			 		"constraints": { 
+			 			"required": true } 
+			 		}, 
+			 	{ 
+			 		"name": "cloudy", 
+			 		"title": "Cloudy",
+			 		"description": "Indicator of presence of cloudy conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "fair", 
+			 		"title": "Title",
+			 		"description": "Indicator of presence of fair conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "smokey", 
+			 		"title": "Smokey",
+			 		"description": "Indicator of presence of 'smokey' conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "misty", 
+			 		"title": "Misty",
+			 		"description": "Indicator of presence of misty conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "frost", 
+			 		"title": "Frost",
+			 		"description": "Indicator of presence of frost conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "snow", 
+			 		"title": "Snow",
+			 		"description": "Indicator of presence of snow conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "sleet", 
+			 		"title": "Sleet",
+			 		"description": "Indicator of presence of sleet conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean",
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "overcast", 
+			 		"title": "Overcast",
+			 		"description": "Indicator of presence of overcast conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "clear", 
+			 		"title": "Clear",
+			 		"description": "Indicator of presence of clear conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "rain", 
+			 		"title": "Rain",
+			 		"description": "Indicator of presence of rainy conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "foggy", 
+			 		"title": "Foggy",
+			 		"description": "Indicator of presence of foggy conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "hail", 
+			 		"title": "Hail",
+					"description": "Indicator of presence of hail conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "thunder", 
+			 		"title": "Thunder",
+			 		"description": "Indicator of presence of thunder.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "lightning", 
+			 		"title": "Lightning",
+			 		"description": "Indicator of presence of lightning.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "hazy", 
+			 		"title": "Hazy",
+			 		"description": "Indicator of presence of hazy conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "muddy", 
+			 		"title": "Muddy",
+			 		"description": "Indicator of presence of muddy conditions.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": true } 
+			 		}, 
+			 	{ 
+			 		"name": "natural_phenomena", 
+			 		"title": "Natural phenomena",
+			 		"description": "Indicator of presence of natural phenomena. This column prominently indicates aurora borealis observations.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "birds", 
+			 		"title": "Birds",
+			 		"description": "Indicator of presence of mentions of birds.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": true } 
+			 		}, 
+			 	{ 
+			 		"name": "mammals", 
+			 		"title": "Mammals",
+			 		"description": "Indicator of presence of mentions of mammals.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "reptilesamphibians", 
+			 		"title": "Reptiles/Amphibians",
+			 		"description": "Indicator of presence of mentions of reptiles or amphibians.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "insectsarthropods", 
+			 		"title": "Insects/Arthropods",
+			 		"description": "Indicator of presence of mentions of insects and athropods.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "fishaquatic", 
+			 		"title": "Fish/Aquatic",
+			 		"description": "Indicator of presence of mentions of fish or aquatic entities.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column. This  column is unused in the dataset for volume 1, but included in the schema for its use in the dataset for volume 2 and the merged dataset.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "plants", 
+			 		"title": "Plants",
+			 		"description": "Indicator of presence of mentions of plants.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "leafing", 
+			 		"title": "Leafing",
+			 		"description": "Indicator whether observations as transcribed describe the leafing process, including budding.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "losing_leaves", 
+			 		"title": "Losing leaves",
+			 		"description": "Indicator whether observations as transcribed describe plants losing leaves.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "blooming", 
+			 		"title": "Blooming",
+			 		"description": "Indicator whether observations as transcribed describe plants blossoming.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "planted", 
+			 		"title": "Planted",
+			 		"description": "Indicator whether observations as transcribed describe the act of sowing seeds or transplanting plants.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "harvested", 
+			 		"title": "Harvested",
+			 		"description": "Indicator whether observations as transcribed describe harvest of plants.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "availability_of_produce", 
+			 		"title": "Availability of produce",
+			 		"description": "Indicator whether observations as transcribed describe produce's seasonal edible availability.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "trees", 
+			 		"title": "Trees",
+			 		"description": "Indicator whether observations as transcribed describe trees.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "seasonal_phenomena", 
+			 		"title": "Seasonal phenomena",
+			 		"description": "Indicator whether observations as transcribed describe the leafing process, including budding.",
+			 		"context": "Derived from the 'Meterological observations as transcribed' column. This  column is unused in the dataset for volume 1, but included in the schema for its use in the dataset for volume 2 and the merged dataset.",
+			 		"type": "boolean", 
+			 		"constraints": { 
+			 			"required": false } 
+			 		}, 
+			 	{ 
+			 		"name": "other_observations_transcribed", 
+			 		"title": "Other observations transcribed",
+			 		"description": "Other observations transcribed from the manuscript, generally located there under 'shooting or falling of leaves of trees, flowers, other remarkable plants,' 'appearance or disappearance of birds,' and 'miscellanea.' The specific nature of these observations is often noted by the previous columns, although observations regarding human activity (such as 'barbacue') also appear occasionally.",
+			 		"type": "string",
+			 		"constraints": { 
+			 			"required": true }
+			 		}
+		 	],
+		}
+		 	"primaryKey": "key" 
+	}
